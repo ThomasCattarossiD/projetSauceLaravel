@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('sauces', function (Blueprint $table) {
             $table->Integer("idSauce")->primary();
-            $table->String("userId")->nullable();
             $table->String("name");
             $table->String("manufacturer");
             $table->String("description");
@@ -24,11 +23,9 @@ return new class extends Migration
             $table->Integer("dislikes");
             $table->String("userLiked");
             $table->String("userDisliked");
-            
-            $table->foreign("userId")
-            ->references("idUtilisateur")
-            ->on("utilisateurs")
-            ->onDelete("cascade");
+
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->timestamps();
         });
