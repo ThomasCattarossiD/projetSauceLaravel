@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>HOT TAKES</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,9 +20,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                 <!-- 
+                <img id="ImageAcceuil" src="{{ asset('image/piment2.png') }}" alt="Image d'acceuil du site">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                     HOT TAKES
                 </a>
+                 -->
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,9 +34,39 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item"> 
+                                </li>
+                            @endif
 
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">{{ __('ALL SAUCES') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">{{ __('ADD SAUCES') }}</a>
+                            </li>
+                        @endguest
                     </ul>
 
+                    <ul class="navbar-nav">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="{{ asset('image/piment2.png') }}" class="img-fluid">
+                            </div>
+                            <div class="col-md-6">
+                                <h2>HOT TAKES</h2>
+                                <p>THE WEB'S BEST HOT SAUCE REVIEW</p>
+                            </div>
+                        </div>
+                        </div>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
