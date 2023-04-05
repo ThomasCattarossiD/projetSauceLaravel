@@ -21,9 +21,7 @@ return new class extends Migration
             $table->Integer("heat");
             $table->Integer("likes");
             $table->Integer("dislikes");
-            $table->String("userLiked");
-            $table->String("userDisliked");
-
+            
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

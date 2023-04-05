@@ -5,16 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-2">
             <div class="card">
-                <div class="card-header">{{ __('Nom sauce 1') }}</div>
-
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('Sauce 1') }}
+                    <img src="https://www.sauce-piquante.fr/1713-large_default/hellfire-fear-this-sauce.jpg"  class="img-fluid" alt="">
+                    <h3>HELL FIRE</h3>
+                    <h6>Heat 7/10</h6>
                 </div>
             </div>
         </div>
@@ -24,7 +18,6 @@
 
                 <div class="card-body">
                     
-                {{ __('Sauce2') }}
                 </div>
             </div>
         </div>    
