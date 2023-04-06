@@ -23,18 +23,12 @@
                             </div>
                         </div>
                     </form>
-                    <form method="GET" action="#">
+                    <form method="GET" action="{{ route('sauce.supprimer', $sauces) }}">
                         @csrf
                         <div class="row mb-0">
                             <div class="col-md-8">
                             @if( $sauces->CreateBy == Auth::user()->name )
-                                <button type="submit" class="btn btn-primary">
-                                        {{ __("Supprimer") }}
-                                </button>
-                            @else
-                                <button type="submit" class="btn btn-primary" style="display:none;">
-                                        {{ __("Supprimer") }}
-                                </button>
+                            <input type="submit" class="btn btn-danger  " value="Supprimer" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élément ?');">
                             @endif
                             </div>
                         </div>

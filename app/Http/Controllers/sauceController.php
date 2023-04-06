@@ -100,4 +100,12 @@ class sauceController extends Controller
 
         return redirect()->route('sauce.show', $sauces)->with('success', 'Retour à la page précédente');
     }
+
+    public function supprimer(sauce $sauces)
+    {
+        $sauce = sauce::find($sauces->id);
+        $sauce->delete();
+        
+        return redirect()->route('home');
+    }
 }

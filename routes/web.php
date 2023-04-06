@@ -35,4 +35,6 @@ Route::get('/sauce/{sauces}/modifierForm', [App\Http\Controllers\sauceController
 
 Route::post('/sauce/{sauces}/update-Sauce', [App\Http\Controllers\sauceController::class, 'updateSauce'])->name('sauce.updateSauce');
 
+Route::get('/sauce/{sauces}/supprimer', [App\Http\Controllers\sauceController::class, 'supprimer'])->name('sauce.supprimer');
+
 
