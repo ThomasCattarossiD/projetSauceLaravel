@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <h3>Bienvenu sur Hot Takes,</h3>
+                    <span>
+                    Hot takes, est un site qui références des millions de sauce piquantes et qui les notes au plus grand plaisir des utilisateurs, amateur ou fan de sauce piquantes en tout cas je vous félicite d'avoir lu jusqu'ici car la vraiment je n'ai plus aucune inspiration pour continuer ma phrase donc je comble avec ce que je peux bref vive les sauces piquantes et bienvenu sur le site
 
-                    {{ __('Bienvenu sur le site web') }}
+                    </span>
 
                     <form method="GET" action="{{ route('home') }}">
                         @csrf
