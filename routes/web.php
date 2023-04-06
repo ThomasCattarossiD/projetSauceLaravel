@@ -19,12 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\sauceController::class, 'index'])->name('home');
 
-Auth::routes();
+Route::get('/sauce/{sauces}', [App\Http\Controllers\sauceController::class, 'show'])->name('sauce.show');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/sauce/{sauces}/addLikes', [App\Http\Controllers\sauceController::class, 'addLike'])->name('sauce.addLike');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/sauce/{sauces}/addDislike', [App\Http\Controllers\sauceController::class, 'addDislike'])->name('sauce.addDislike');

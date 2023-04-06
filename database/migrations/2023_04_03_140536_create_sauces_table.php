@@ -18,10 +18,11 @@ return new class extends Migration
             $table->String("description");
             $table->String("mainPepper");
             $table->String("imageUrl");
-            $table->Integer("heat");
-            $table->Integer("likes");
-            $table->Integer("dislikes");
-            
+            $table->Integer("heat");   
+            $table->Integer('likes'); 
+            $table->Integer('dislikes');
+            $table->text("userLikes")->nullable();
+            $table->text("userDislikes")->nullable();            
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

@@ -3,24 +3,21 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        
+        @foreach ($sauces as $sauce)
         <div class="col-md-2">
-            <div class="card">
+            <div class="card" >
                 <div class="card-body">
-                    <img src="https://www.sauce-piquante.fr/1713-large_default/hellfire-fear-this-sauce.jpg"  class="img-fluid" alt="">
-                    <h3>HELL FIRE</h3>
-                    <h6>Heat 7/10</h6>
-                </div>
+                <a href="{{ route('sauce.show', $sauce) }}" style="text-decoration: none; color: inherit;">
+                    <img src="{{ $sauce->imageUrl }}"  class="img-fluid" alt="">
+                    <h3>{{ $sauce->name }}</h3>
+                    <h6>Heat {{ $sauce->heat }}/10</h6>
+                </a>
+                </div>        
             </div>
-        </div>
-        <div class="col-md-2">
-            <div class="card">
-                <div class="card-header">{{ __('Nom Sauce 2') }}</div>
-
-                <div class="card-body">
-                    
-                </div>
-            </div>
-        </div>    
+        </div> 
+        @endforeach
+           
     </div>
 </div>
 @endsection

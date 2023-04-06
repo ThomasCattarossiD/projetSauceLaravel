@@ -46,7 +46,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('ALL SAUCES') }}</a>
+                                <a class="nav-link" href="{{ route('home') }}">{{ __('ALL SAUCES') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">{{ __('ADD SAUCES') }}</a>
@@ -58,11 +58,15 @@
                         <div class="container">
                         <div class="row">
                             <div class="col-md-3">
-                                <img src="{{ asset('image/piment2.png') }}" class="img-fluid">
+                                <a href="/" style="text-decoration: none; color: inherit;">
+                                    <img src="{{ asset('image/piment2.png') }}" class="img-fluid">
+                                </a>
                             </div>
                             <div class="col-md-6">
-                                <h2>HOT TAKES</h2>
-                                <p>THE WEB'S BEST HOT SAUCE REVIEW</p>
+                                <a href="/" style="text-decoration: none; color: inherit;">
+                                    <h2>HOT TAKES</h2>
+                                    <p>THE WEB'S BEST HOT SAUCE REVIEW</p>
+                                </a>
                             </div>
                         </div>
                         </div>
