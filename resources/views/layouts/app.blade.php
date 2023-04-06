@@ -20,12 +20,6 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                 <!-- 
-                <img id="ImageAcceuil" src="{{ asset('image/piment2.png') }}" alt="Image d'acceuil du site">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                     HOT TAKES
-                </a>
-                 -->
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,7 +43,7 @@
                                 <a class="nav-link" href="{{ route('home') }}">{{ __('ALL SAUCES') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">{{ __('ADD SAUCES') }}</a>
+                                <a class="nav-link" href="{{ route('addSauceForm') }}">{{ __('ADD SAUCES') }}</a>
                             </li>
                         @endguest
                     </ul>

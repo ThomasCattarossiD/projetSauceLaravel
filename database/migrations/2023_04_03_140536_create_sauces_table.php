@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sauces', function (Blueprint $table) {
-            $table->Integer("idSauce")->primary();
+            $table->id();
             $table->String("name");
             $table->String("manufacturer");
             $table->String("description");
@@ -20,9 +20,8 @@ return new class extends Migration
             $table->String("imageUrl");
             $table->Integer("heat");   
             $table->Integer('likes'); 
-            $table->Integer('dislikes');
-            $table->text("userLikes")->nullable();
-            $table->text("userDislikes")->nullable();            
+            $table->Integer('dislikes'); 
+            $table->String("CreateBy")->nullable();           
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

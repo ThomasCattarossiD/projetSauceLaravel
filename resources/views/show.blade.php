@@ -7,6 +7,8 @@
             <div class="card" >
                 <div class="card-body">
                     <h1>{{ $sauces->name }}</h1>
+                    <h6>Fabriqué par {{ $sauces->manufacturer }}</h6>
+                    <h6>Ajouté par {{ $sauces->CreateBy }}</h6>
                     <img src="{{ $sauces->imageUrl }}"  class="img-fluid" alt="">
                     <h3>Description:  {{ $sauces->description }}</h3>
                     <h4>Heat: {{ $sauces->heat }}/10</h4>

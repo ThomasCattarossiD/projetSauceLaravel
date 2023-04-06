@@ -29,15 +29,36 @@ class sauceController extends Controller
         return view('home', compact('sauces'));
     }
 
-
     public function show(sauce $sauces)
     {
         return view('show', compact('sauces'));
     }
 
+    public function addSauceForm()
+    {
+        return view('addSauce');
+    }
+
+    public function ajouterSauce(Request $request)
+    {
+        $sauce = new sauce();
+        $sauce->name = $request->input('name');
+        $sauce->manufacturer = $request->input('manufacturer');
+        $sauce->CreateBy = $request->input('CreateBy');
+        $sauce->description = $request->input('description');
+        $sauce->mainPepper = $request->input('mainPepper');
+        $sauce->imageUrl = $request->input('imageUrl');
+        $sauce->heat = $request->input('heat');
+        $sauce->likes = $request->input('likes');
+        $sauce->dislikes = $request->input('dislikes');
+        $sauce->save();
+
+        return redirect()->route('home');
+    }
+
     public function addLike(sauce $sauces)
     {
-        $sauce = sauce::find($sauces->idSauce);
+        $sauce = sauce::find($sauces->id);
         $sauceLikes = $sauce->likes;
         $sauceLikes ++;
         $sauce->likes = $sauceLikes;
@@ -48,7 +69,7 @@ class sauceController extends Controller
 
     public function addDislike(sauce $sauces)
     {
-        $sauce = sauce::find($sauces->idSauce);
+        $sauce = sauce::find($sauces->id);
         $sauceDislikes = $sauce->dislikes;
         $sauceDislikes ++;
         $sauce->dislikes = $sauceDislikes;
