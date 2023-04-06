@@ -77,4 +77,27 @@ class sauceController extends Controller
 
         return redirect()->route('sauce.show', $sauces);
     }
+
+    public function modifierForm(sauce $sauces)
+    {      
+        $sauce = sauce::find($sauces->id);
+        return view('modifierForm', compact('sauce'));
+    }
+
+    public function updateSauce(Request $request, sauce $sauces)
+    {
+        $sauce = sauce::find($sauces->id);
+        $sauce->name = $request->input('name');
+        $sauce->manufacturer = $request->input('manufacturer');
+        $sauce->CreateBy = $request->input('CreateBy');
+        $sauce->description = $request->input('description');
+        $sauce->mainPepper = $request->input('mainPepper');
+        $sauce->imageUrl = $request->input('imageUrl');
+        $sauce->heat = $request->input('heat');
+        $sauce->likes = $request->input('likes');
+        $sauce->dislikes = $request->input('dislikes');
+        $sauce->save();
+
+        return redirect()->route('sauce.show', $sauces)->with('success', 'Retour à la page précédente');
+    }
 }

@@ -31,4 +31,8 @@ Route::get('/sauce/{sauces}/addLikes', [App\Http\Controllers\sauceController::cl
 
 Route::get('/sauce/{sauces}/addDislike', [App\Http\Controllers\sauceController::class, 'addDislike'])->name('sauce.addDislike');
 
+Route::get('/sauce/{sauces}/modifierForm', [App\Http\Controllers\sauceController::class, 'modifierForm'])->name('sauce.modifierForm');
+
+Route::post('/sauce/{sauces}/update-Sauce', [App\Http\Controllers\sauceController::class, 'updateSauce'])->name('sauce.updateSauce');
+
 
