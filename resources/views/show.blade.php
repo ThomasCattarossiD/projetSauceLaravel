@@ -6,6 +6,17 @@
         <div class="col-md-9">
             <div class="card" >
                 <div class="card-body">
+                    <form method="GET" action="{{route('home')}}">
+                        @csrf
+                        <div class="row mb-0">
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-primary">
+                                        {{ __("<- Retour") }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
                     <h1>{{ $sauces->name }}</h1>
                     <form method="GET" action="{{ route('sauce.modifierForm', $sauces) }}">
                         @csrf
@@ -42,10 +53,11 @@
                     @endif  
                     
                     <img src="{{ $sauces->imageUrl }}"  class="img-fluid" alt="">
-                    <h3>Description:  {{ $sauces->description }}</h3>
-                    <h4>Heat: {{ $sauces->heat }}/10</h4>
-                    <h4>Likes: {{ $sauces->likes }}</h4>
-                    <h4>Dislikes: {{ $sauces->dislikes }}</h4>
+                    <h4><U>Description:</U>  {{ $sauces->description }}</h4>
+                    <h4><U>Ingrédient principale:</U>  {{ $sauces->mainPepper }}</h3>
+                    <h4><U>Heat:</U> {{ $sauces->heat }}/10</h4>
+                    <h4><U>Likes:</U> {{ $sauces->likes }}</h4>
+                    <h4><U>Dislikes:</U> {{ $sauces->dislikes }}</h4>
                     <form method="GET" action="{{ route('sauce.addLike', $sauces) }}">
                         @csrf
                         <div class="row mb-0">
@@ -62,16 +74,6 @@
                             <div class="col-md-8">
                                 <button type="submit" class="btn btn-primary">
                                         {{ __("Je n'aime pas") }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                    <form method="GET" action="{{route('home')}}">
-                        @csrf
-                        <div class="row mb-0">
-                            <div class="col-md-8">
-                                <button type="submit" class="btn btn-primary">
-                                        {{ __("<- Retour") }}
                                 </button>
                             </div>
                         </div>
